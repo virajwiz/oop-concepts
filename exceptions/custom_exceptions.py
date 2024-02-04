@@ -10,3 +10,8 @@ class InsufficientFundsError(Exception):
         self.amount_requested = amount_requested
         super().__init__(f"Insufficient funds. Current balance:{amount_balance}, Amount requested:{amount_requested}")
         
+class InvalidTransactionError(Exception):
+    pass
+
+class InvalidValueError(Exception):
+    pass

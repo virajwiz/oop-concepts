@@ -1,4 +1,5 @@
-from banking.bank import SavingsBankAccount
+from banking.bank import SavingsBankAccount, Transaction
+from exceptions.custom_exceptions import InsufficientFundsError, InvalidTransactionError, InvalidValueError
 
 
 def test_control_structures():
@@ -17,3 +18,18 @@ def test_control_structures():
     account.__account_holder = "Anand"
     account.set_account_holder("Anand")
     print (account.display_balance())
+
+def test_exceptions():
+    account = SavingsBankAccount("123", "viraj", 1000)
+    try:
+        Transaction.deposit(account, 500)
+        Transaction.withdraw(account, 200)
+        Transaction.check_balance(account)
+        
+        Transaction.withdraw(account, 10000)
+    except (InsufficientFundsError, InvalidTransactionError, InvalidValueError) as e:
+        print(f"Error:{e}")
+
+
+    
+
