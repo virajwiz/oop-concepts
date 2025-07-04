@@ -23,11 +23,18 @@ class Rectangle(Polygon):
         area = self.length*self.width
         print(f"Calculating area of rectangle: {area}")
 
-class Square(Rectangle):
-    def __init__(self, color, side):
-        super().__init__(color, side, side)
+    def calculate_perimeter(self):
+        perimeter = 2*(self.length+self.width)
+        print(f"Calculating periemter of rectangle: {perimeter} ")
+
+class Square(Polygon):
+    def __init__(self, color, sides):
+        super().__init__(color, sides, sides)
 
     def calculate_area(self):
-        area = self.length ** 2
+        area = self.sides ** 2
         print(f"Calculating area of a square: {area}")
         
+    def calculate_perimeter(self):
+        perimeter = self.sides+self.sides+self.sides+self.sides
+        print(f"Calculating periemter of square: {perimeter} ")

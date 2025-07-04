@@ -7,6 +7,8 @@ def test_inheritance():
 
     rectangle1.display_info()
     rectangle1.calculate_area()
+    rectangle1.calculate_perimeter()
 
     square1.display_info()
     square1.calculate_area()
+    square1.calculate_perimeter()
